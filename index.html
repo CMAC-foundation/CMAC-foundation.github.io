@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -1533,7 +1533,7 @@
     <form
       class="contact-form"
       id="contact-form"
-      action="https://formspree.io/f/YOUR_FORM_ID"
+      action="https://formspree.io/f/xojrlrzp"
       method="POST"
       onsubmit="handleSubmit(event)"
     >
@@ -1688,10 +1688,12 @@
     }
   }
 
-  // Close mobile menu when any nav link is tapped
+  // Close mobile menu when a nav link is tapped — mobile only
   document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
-      document.querySelector('.nav-links').style.display = 'none';
+      if (window.innerWidth <= 900) {
+        document.querySelector('.nav-links').style.cssText = '';
+      }
     });
   });
 
@@ -1703,12 +1705,6 @@
 
     const form = document.getElementById('contact-form');
     const btn  = document.getElementById('submit-btn');
-
-    // Guard: warn if form ID hasn't been replaced yet
-    if (form.action.includes('YOUR_FORM_ID')) {
-      alert('⚠️ Setup needed: Open index.html and replace YOUR_FORM_ID in the form action with your Formspree ID.\n\nVisit https://formspree.io to create a free account and get your form ID.');
-      return;
-    }
 
     btn.textContent = 'Sending...';
     btn.disabled = true;
