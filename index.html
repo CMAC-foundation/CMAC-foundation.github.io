@@ -1457,13 +1457,8 @@
 
 <!-- ════════════════════════════════════════
      CONTACT
-     Form is now wired to Formspree.
-     SETUP STEPS (5 minutes):
-       1. Go to https://formspree.io and create a free account.
-       2. Create a new form — set the email to info.cmacfoundation@gmail.com
-       3. Copy your Form ID (looks like: xpwzgkqr)
-       4. Replace YOUR_FORM_ID below with that ID.
-     That's it — submissions will arrive in Gmail immediately.
+     Form is wired to Formspree (ID: xojrlrzp)
+     Submissions go to info.cmacfoundation@gmail.com
 ════════════════════════════════════════ -->
 <section id="contact" class="fade-in">
   <div class="contact-left">
@@ -1526,10 +1521,7 @@
   </div>
 
   <div class="contact-right">
-    <!--
-      Formspree form — replace YOUR_FORM_ID with your actual ID from formspree.io
-      Example: action="https://formspree.io/f/xpwzgkqr"
-    -->
+    <!-- Formspree form — wired to xojrlrzp → info.cmacfoundation@gmail.com -->
     <form
       class="contact-form"
       id="contact-form"
@@ -1698,8 +1690,7 @@
   });
 
   // ── Contact form — Formspree AJAX submission ─────────────────────────
-  // This submits the form without leaving the page and shows a success message.
-  // REQUIRED: Replace YOUR_FORM_ID in the form's action attribute above.
+  // Submits without leaving the page and shows a success message on completion.
   async function handleSubmit(event) {
     event.preventDefault();
 
